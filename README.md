@@ -8,7 +8,7 @@ Managing complex cloud environments in an enterprise setting involves handling m
 
 ## Solution
 
-entctl provides a comprehensive solution by using Kubernetes custom resources and controllers to represent and manage these entities. By integrating with Crossplane and Argo CD, it ensures a declarative, automated, and secure approach to managing cloud resources and organizational hierarchies.
+`enterprisectl` provides a comprehensive solution by using Kubernetes custom resources and controllers to represent and manage these entities. By integrating with Crossplane and Argo CD, it ensures a declarative, automated, and secure approach to managing cloud resources and organizational hierarchies.
 
 ## System Components
 
