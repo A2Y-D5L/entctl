@@ -1,0 +1,80 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: elevatedaccessrequests.registry.cloud.company.com
+spec:
+  group: cloud.company.com
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            metadata:
+              type: object
+              properties:
+                labels:
+                  type: object
+                annotations:
+                  type: object
+                finalizers:
+                  type: array
+                  items:
+                    type: string
+            spec:
+              type: object
+              properties:
+                userEmail:
+                  type: string
+                  description: Email of the user requesting elevated access.
+                  minLength: 1
+                productName:
+                  type: string
+                  description: Name of the product or project.
+                  minLength: 1
+                assetNames:
+                  type: array
+                  items:
+                    type: string
+                  description: List of assets associated with the product.
+                ttl:
+                  type: string
+                  description: Time-to-live for the elevated access request.
+                approvedBy:
+                  type: string
+                  description: Email of the user who approved the request.
+                  minLength: 1
+                elevatedPermissions:
+                  type: array
+                  items:
+                    type: string
+                  description: List of elevated IAM permissions for the user.
+              required:
+                - userEmail
+                - productName
+                - ttl
+                - approvedBy
+                - elevatedPermissions
+            status:
+              type: object
+              properties:
+                state:
+                  type: string
+                  description: The current state of the ElevatedAccessRequest.
+                  enum: ["Pending", "Approved", "Active", "Expired", "Error"]
+                message:
+                  type: string
+                  description: Any message related to the current state of the ElevatedAccessRequest.
+                lastUpdated:
+                  type: string
+                  format: date-time
+                  description: The last time the status was updated.
+  scope: Namespaced
+  names:
+    plural: elevatedaccessrequests
+    singular: elevatedaccessrequest
+    kind: ElevatedAccessRequest
+    shortNames:
+      - ear

@@ -1,0 +1,96 @@
+apiversion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: assets.registry.cloud.company.com
+spec:
+  group: cloud.company.com
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            metadata:
+              type: object
+              properties:
+                labels:
+                  type: object
+                annotations:
+                  type: object
+                finalizers:
+                  type: array
+                  items:
+                    type: string
+            spec:
+              type: object
+              properties:
+                assetID:
+                  type: string
+                  description: A globally unique identifier that is generated for the Asset.
+                  x-kubernetes-preserve-unknown-fields: true
+                  readOnly: true
+                name:
+                  type: string
+                  description: Human-readable name of this Asset. Must be unique within a Product’s set of assets.
+                  minLength: 1
+                product:
+                  type: object
+                  properties:
+                    apiVersion:
+                      type: string
+                      enum:
+                        - cloud.company.com/v1alpha1
+                    kind:
+                      type: string
+                      enum:
+                        - Product
+                    name:
+                      type: string
+                      minLength: 1
+                  required:
+                    - apiVersion
+                    - kind
+                    - name
+                  description: Reference to the Product that this Asset belongs to.
+                claims:
+                  type: object
+                  properties:
+                    repositoryURL:
+                      type: string
+                      description: The URL of the Bitbucket repository containing Crossplane claims.
+                    gitBranch:
+                      type: string
+                      description: The branch in the repository representing the claims.
+                    gitCommit:
+                      type: string
+                      description: The commit identifier that produced the claims.
+                  required:
+                    - repositoryURL
+                    - gitBranch
+                    - gitCommit
+                  description: Defines the resource(s) to be deployed from a Bitbucket repository containing Crossplane claims.
+              required:
+                - name
+                - claims
+                - product
+            status:
+              type: object
+              properties:
+                state:
+                  type: string
+                  description: The current state of the Asset.
+                  enum: ["Pending", "Creating", "Ready", "Error"]
+                message:
+                  type: string
+                  description: Any message related to the current state of the Asset.
+                lastUpdated:
+                  type: string
+                  format: date-time
+                  description: The last time the status was updated.
+  scope: Namespaced
+  names:
+    plural: assets
+    singular: asset
+    kind: Asset
