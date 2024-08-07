@@ -1,6 +1,6 @@
-# A2Y-D5L / entctl
+# A2Y-D5L / enterprisectl
 
-`entctl` is a proof-of-concept design for an enterprise cloud control plane. It leverages Kubernetes custom resources and controllers to manage organizational structures, products, assets, and IAM permissions, integrating with Crossplane for managing GCP resources and Argo CD for GitOps-based synchronization of asset claims stored in Bitbucket. Here’s a detailed summary of the components and their relationships:
+`enterprisectl` is a proof-of-concept design for an enterprise cloud control plane. It leverages Kubernetes custom resources and controllers to manage organizational structures, products, assets, and IAM permissions, integrating with Crossplane for managing GCP resources and Argo CD for GitOps-based synchronization of asset claims stored in Bitbucket. Here’s a detailed summary of the components and their relationships:
 
 #### Custom Resource Definitions (CRDs)
 
