@@ -46,20 +46,6 @@
    - **Responsibilities**: Manages the lifecycle of elevated access requests, including granting and revoking access based on TTL expiration.
    - **Integration**: Handles temporary elevated permissions for users, ensuring requests are approved and tracked properly.
 
-#### Key Enhancements with Argo CD
-
-1. **Declarative Management**:
-   - Argo CD allows for declarative management of Kubernetes resources by syncing the desired state from a Git repository.
-
-2. **Automated Sync and Self-Healing**:
-   - Automatically synchronizes resources and heals any drift from the desired state defined in Git.
-
-3. **Simplified Controller Logic**:
-   - Offloads the responsibility of syncing and managing resource claims to Argo CD, reducing complexity in the asset controller.
-
-4. **Version Control and Auditing**:
-   - All changes are tracked in Git, providing an audit trail and enabling easy rollbacks.
-
 #### Relationships
 
 - **Between Custom Components**:
