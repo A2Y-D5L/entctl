@@ -7,3 +7,7 @@ data:
   name: Backstage
   description: Platform for building developer portals
   organization: ops-it-platforms-idp
+  roles: |
+    - roles/viewer
+    - roles/storage.objectViewer
+    - roles/pubsub.viewer
