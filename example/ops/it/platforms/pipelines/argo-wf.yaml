@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argo-wf-product
+  namespace: ops-it-platforms
+data:
+  name: Argo Workflows
+  description: CI/CD workflows with Argo
+  organization: ops-it-platforms-pipelines
