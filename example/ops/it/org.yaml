@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ops-it-org
+  namespace: ops-it
+data:
+  name: Information Technology
+  ownedBy: ops
+  approvers: ops-it-approvers
+  members: ops-it-members
