@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ops-it-platforms-cicd-org
+  namespace: ops-it-platforms
+data:
+  name: CICD Team
+  ownedBy: ops-it-platforms
+  approvers: ops-it-platforms-cicd-approvers
+  members: ops-it-platforms-cicd-members

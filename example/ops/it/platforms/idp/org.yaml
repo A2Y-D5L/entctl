@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ops-it-platforms-idp-org
+  namespace: ops-it-platforms
+data:
+  name: Developer Platform Team
+  ownedBy: ops-it-platforms
+  approvers: ops-it-platforms-idp-approvers
+  members: ops-it-platforms-idp-members

@@ -6,4 +6,4 @@ metadata:
 data:
   name: Argo Workflows
   description: CI/CD workflows with Argo
-  organization: ops-it-platforms-pipelines
+  organization: ops-it-platforms-cicd
