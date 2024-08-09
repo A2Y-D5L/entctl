@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ops-it-platforms-org
+  namespace: platforms
+data:
+  name: Platform Engineering Product Family
+  ownedBy: ops-it
+  approvers: ops-it-platforms-approvers
+  members: ops-it-platforms-members
