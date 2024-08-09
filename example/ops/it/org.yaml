@@ -4,7 +4,7 @@ metadata:
   name: ops-it-org
   namespace: ops-it
 data:
-  name: Information Technology
+  name: Information Technology Group
   ownedBy: ops
   approvers: ops-it-approvers
   members: ops-it-members
