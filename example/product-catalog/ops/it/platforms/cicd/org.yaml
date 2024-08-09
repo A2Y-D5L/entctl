@@ -8,3 +8,7 @@ data:
   ownedBy: ops-it-platforms
   approvers: ops-it-platforms-cicd-approvers
   members: ops-it-platforms-cicd-members
+  roles: |
+    - roles/viewer
+    - roles/storage.objectViewer
+    - roles/pubsub.viewer

@@ -8,3 +8,7 @@ data:
   ownedBy: ops-it-platforms
   approvers: ops-it-platforms-idp-approvers
   members: ops-it-platforms-idp-members
+  roles: |
+    - roles/viewer
+    - roles/storage.objectViewer
+    - roles/pubsub.viewer
