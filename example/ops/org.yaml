@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ops-org
+  namespace: ops
+data:
+  name: Operations
+  ownedBy: company
+  approvers: ops-approvers-group
+  members: ops-members-group
